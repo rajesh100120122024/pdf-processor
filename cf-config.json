@@ -1,0 +1,66 @@
+{
+    "CallerReference": "pdf-processor-2025",
+    "Origins": {
+      "Quantity": 1,
+      "Items": [
+        {
+          "Id": "pdf-processor-22042025",
+          "DomainName": "pdf-processor-22042025.s3.ap-south-1.amazonaws.com",
+          "CustomOriginConfig": {
+            "HTTPPort": 80,
+            "HTTPSPort": 443,
+            "OriginProtocolPolicy": "http-only"
+          }
+        }
+      ]
+    },
+    "DefaultCacheBehavior": {
+      "TargetOriginId": "pdf-processor-22042025",
+      "ViewerProtocolPolicy": "redirect-to-https",
+      "AllowedMethods": {
+        "Quantity": 3,
+        "Items": ["GET", "HEAD", "OPTIONS"],
+        "CachedMethods": {
+          "Quantity": 2,
+          "Items": ["GET", "HEAD"]
+        }
+      },
+      "ForwardedValues": {
+        "QueryString": false,
+        "Cookies": {
+          "Forward": "none"
+        },
+        "Headers": {
+          "Quantity": 0
+        },
+        "QueryStringCacheKeys": {
+          "Quantity": 0
+        }
+      },
+      "MinTTL": 0,
+      "DefaultTTL": 86400,
+      "MaxTTL": 31536000,
+      "TrustedSigners": {
+        "Enabled": false,
+        "Quantity": 0
+      },
+      "Compress": true,
+      "SmoothStreaming": false
+    },
+    "Comment": "PDF Processor Frontend",
+    "Enabled": true,
+    "PriceClass": "PriceClass_100",
+    "ViewerCertificate": {
+      "CloudFrontDefaultCertificate": true
+    },
+    "Logging": {
+      "Enabled": false,
+      "IncludeCookies": false,
+      "Bucket": "",
+      "Prefix": ""
+    },
+    "WebACLId": "",
+    "HttpVersion": "http2",
+    "DefaultRootObject": "index.html"
+  }
+  
